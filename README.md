@@ -63,6 +63,60 @@ Importe uma chave privada de `ACCOUNTS` no **Ganache** informando no **Metamask*
 - Selecione o tipo: `Chave privada`
 - Cole a string da sua chave privada aqui: `<PEGAR DO GANACHE>`
 
-Renomear essa conta para: `MyEthNet Acc01`
+Renomear essa conta para: `DIOAcc01`
 
-> **POSIÇÃO CORRENTE:** ***06:48***
+## Conectar Metamask ao Remix
+
+No `https://remix.ethereum.org/` selecionar:
+
+- `Deploy & run transactions`
+- `ENVIRONMENT`
+- `Injected Provider - Metamask`
+
+Para conectar a conta ao **Remix** seguir as orientações a seguir:
+
+> [Manually connecting to a dapp](https://support.metamask.io/third-party-platforms-and-dapps/manually-connecting-to-a-dapp/)
+
+## Primeiro Smartcontract
+
+No `https://remix.ethereum.org/`:
+
+- `FILE EXPLORER`
+- `contracts`
+
+Criar o arquivo `DIOCoin.sol` e nele colocar o código:
+
+- [`DIOCoin.sol`](./DIOCoin.sol)
+
+No `https://remix.ethereum.org/` em `SOLIDITY COMPILER`:
+
+- Em `COMPILER` selecionar `0.8.15+commit.e14f2714`
+- Clicar em `Compile DIOCoin.sol`
+- Se tudo estiver OK irá aparecer um **tick verde**
+
+## Fazendo algumas transações
+
+No `https://remix.ethereum.org/` em `DEPLOY & RUN TRANSACTIONS`:
+
+- Selecionar em `CONTRACT` o contrato `DIOToken - contracts/DIOCoin.sol`
+- Clicar em `Deploy`
+
+O **MetaMask** irá surgir solicitando confirmação:
+
+- Clicar em `Confirmar`
+
+No **Ganache** será possível ver a transação do contrato.
+
+No `https://remix.ethereum.org/` em `Deployed/Unpinned Contracts` pode-se visualizar os `getters` e `functions` do contrato.
+
+Clicando em `decimals`, `name` e `symbol` vemos os valores atribuidos a esse contrato.
+
+Em `balanceOf` usando a conta que criamos o contrato (`DIOAcc01`) vemos o valor de `totalSupply`.
+
+Seguindo as instruções de [Importar conta ao Metamask](#importar-conta-ao-metamask), importe a segunda conta disponibilizada no **Ganache** identificando-a como `DIOAcc02`.
+
+Em `balanceOf` usando esta segunda conta importada (`DIOAcc02`) vemos o valor zerado.
+
+...
+
+> **POSIÇÃO CORRENTE:** ***22:30***
