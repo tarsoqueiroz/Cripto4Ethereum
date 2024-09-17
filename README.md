@@ -117,6 +117,40 @@ Seguindo as instruções de [Importar conta ao Metamask](#importar-conta-ao-meta
 
 Em `balanceOf` usando esta segunda conta importada (`DIOAcc02`) vemos o valor zerado.
 
-...
+## Visualizando o Token DIO no Metamask
 
-> **POSIÇÃO CORRENTE:** ***22:30***
+Na visão expandida do Metamask no browser, selecione em `Tokens` para as duas contas (`DIOAcc01` e `DIOAcc02`):
+
+- `Importar`
+- `Endereço de contrato do token`: inserir o endereço do contrato criado no **Ganache**
+- `Seguinte`
+
+Conseguiremos visualizar no **Metamask** o saldo do token DIO.
+
+## Executando transações de uma conta para a outra
+
+No `REMIX` em `DEPLOY & RUN TRANSACTIONS`:
+
+- Em `ACCOUNT` colocar o endereço de `DIOAcc01`
+- Em `Deployed/Unpinned Contracts` - `transfer`:
+  - Para `receiver` colocar o endereço de `DIOAcc02`
+  - Em `numTokens` o valor 500000000000000000 
+  - Clicar em `transact`
+  - Confirmar no **Metamask**
+
+Transferindo 0.5 DIO de `DIOAcc01` para `DIOAcc02`. Verifique o token `DIO` no **Metamask** nas duas contas para confirmar os saldos.
+
+No `REMIX` em `DEPLOY & RUN TRANSACTIONS`:
+
+- Em `ACCOUNT` colocar o endereço de `DIOAcc02`
+- Em `Deployed/Unpinned Contracts` - `transfer`:
+  - Para `receiver` colocar o endereço de `DIOAcc01`
+  - Em `numTokens` o valor 250000000000000000 
+  - Clicar em `transact`
+  - Confirmar no **Metamask**
+
+Transferindo 0.25 DIO de `DIOAcc02` para `DIOAcc01`. Verifique o token `DIO` no **Metamask** nas duas contas para confirmar os saldos.
+
+## That't all
+
+...folks!!!
